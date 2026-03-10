@@ -35,8 +35,8 @@ COLORS = {
     "warning": "#FFB703",       # Amber
     "danger": "#EF476F",        # Coral red
     "danger_dark": "#C1334A",
-    "text": "#1E293B",
-    "text_muted": "#64748B",
+    "text": "#0F172A",
+    "text_muted": "#334155",
     "bg_card": "#FFFFFF",
     "bg_page": "#F1F5F9",
     "bg_sidebar": "#0F2B46",
