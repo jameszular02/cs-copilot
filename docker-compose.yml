@@ -1,0 +1,7 @@
+services:
+  cs-ops-dashboard:
+    build: .
+    container_name: cs-ops-dashboard
+    ports:
+      - "8501:8501"
+    restart: unless-stopped
