@@ -1,0 +1,50 @@
+Account_ID,Account_Name,Segment,Region,CSM,ARR,Renewal_Date,Health_Score,Forecast_Category,Churn_Probability,NPS_Score
+ACC-0003,Account_0003,Enterprise,EMEA,Sarah Chen,111410.98,2026-06-20,Healthy,Commit,0.042,8
+ACC-0014,Account_0014,SMB,EMEA,James Thompson,26320.94,2026-08-01,At Risk,At Risk,0.521,4
+ACC-0026,Account_0026,Enterprise,LATAM,Emily Rodriguez,100000.0,2026-05-14,Healthy,Commit,0.054,10
+ACC-0027,Account_0027,Mid-Market,EMEA,Michael Brown,31486.12,2026-06-04,At Risk,At Risk,0.381,3
+ACC-0046,Account_0046,Enterprise,North America,Marcus Johnson,149400.07,2026-05-16,Healthy,At Risk,0.093,7
+ACC-0051,Account_0051,Mid-Market,EMEA,Chris Lee,25000.0,2026-05-01,Healthy,Commit,0.071,8
+ACC-0054,Account_0054,Mid-Market,LATAM,Lisa Wang,28564.31,2026-07-26,Needs Attention,Best Case,0.244,8
+ACC-0056,Account_0056,Enterprise,APAC,Ana Garcia,109513.06,2026-05-16,Needs Attention,Pipeline,0.236,6
+ACC-0063,Account_0063,Enterprise,APAC,Michael Brown,100000.0,2026-08-20,Healthy,Commit,0.05,9
+ACC-0072,Account_0072,Mid-Market,LATAM,Sarah Chen,26656.71,2026-03-10,Needs Attention,Commit,0.141,6
+ACC-0076,Account_0076,Mid-Market,APAC,Sarah Chen,53541.35,2026-07-03,Critical,Commit,0.599,2
+ACC-0082,Account_0082,SMB,APAC,James Thompson,11476.63,2026-08-25,Needs Attention,Best Case,0.101,7
+ACC-0084,Account_0084,Mid-Market,North America,Sarah Chen,51592.42,2026-08-07,Critical,At Risk,0.637,4
+ACC-0091,Account_0091,SMB,North America,Lisa Wang,20448.75,2026-07-15,Healthy,Commit,0.078,9
+ACC-0094,Account_0094,Mid-Market,North America,Chris Lee,25000.0,2026-03-08,Healthy,Commit,0.048,10
+ACC-0098,Account_0098,SMB,North America,Lisa Wang,12146.92,2026-03-11,Healthy,Commit,0.024,9
+ACC-0104,Account_0104,Mid-Market,North America,Chris Lee,32122.55,2026-05-13,Healthy,Commit,0.063,10
+ACC-0107,Account_0107,SMB,North America,Emily Rodriguez,13950.84,2026-03-11,At Risk,At Risk,0.544,5
+ACC-0110,Account_0110,Mid-Market,North America,Emily Rodriguez,53053.0,2026-05-22,Needs Attention,At Risk,0.159,5
+ACC-0111,Account_0111,Mid-Market,LATAM,David Kim,51894.3,2026-06-28,Healthy,Commit,0.032,8
+ACC-0120,Account_0120,Mid-Market,LATAM,Sarah Chen,39717.76,2026-03-12,Critical,At Risk,0.883,4
+ACC-0121,Account_0121,Enterprise,North America,Chris Lee,101504.91,2026-08-11,Healthy,Commit,0.093,9
+ACC-0123,Account_0123,Mid-Market,EMEA,David Kim,60358.09,2026-03-13,Healthy,Commit,0.087,7
+ACC-0128,Account_0128,Mid-Market,North America,Chris Lee,37894.91,2026-04-30,Healthy,Best Case,0.081,8
+ACC-0129,Account_0129,SMB,North America,James Thompson,6609.37,2026-07-07,Healthy,Commit,0.098,9
+ACC-0134,Account_0134,Mid-Market,APAC,Marcus Johnson,32086.2,2026-08-06,At Risk,Pipeline,0.488,5
+ACC-0137,Account_0137,Mid-Market,North America,James Thompson,38013.29,2026-03-23,Healthy,Commit,0.096,7
+ACC-0139,Account_0139,Enterprise,APAC,Emily Rodriguez,100000.0,2026-05-03,Needs Attention,Commit,0.202,6
+ACC-0145,Account_0145,Enterprise,North America,James Thompson,100000.0,2026-07-18,Needs Attention,Pipeline,0.155,5
+ACC-0147,Account_0147,Enterprise,EMEA,Rachel Foster,126736.93,2026-03-17,Healthy,Commit,0.074,7
+ACC-0149,Account_0149,Enterprise,EMEA,David Kim,168094.96,2026-05-04,At Risk,At Risk,0.568,3
+ACC-0157,Account_0157,SMB,EMEA,Emily Rodriguez,24626.67,2026-04-12,Needs Attention,At Risk,0.23,5
+ACC-0160,Account_0160,SMB,EMEA,Sarah Chen,8933.88,2026-03-16,Healthy,Commit,0.068,9
+ACC-0171,Account_0171,SMB,EMEA,Emily Rodriguez,20135.53,2026-06-19,Needs Attention,Pipeline,0.298,7
+ACC-0174,Account_0174,Enterprise,EMEA,Lisa Wang,100000.0,2026-05-08,Critical,At Risk,0.636,1
+ACC-0179,Account_0179,Enterprise,North America,James Thompson,215941.33,2026-06-07,Healthy,At Risk,0.027,10
+ACC-0180,Account_0180,Mid-Market,APAC,Rachel Foster,35372.85,2026-03-30,Healthy,Commit,0.1,7
+ACC-0181,Account_0181,Enterprise,LATAM,James Thompson,111513.44,2026-06-08,Healthy,Commit,0.063,9
+ACC-0199,Account_0199,Mid-Market,LATAM,Michael Brown,118895.96,2026-06-12,Healthy,At Risk,0.074,7
+ACC-0204,Account_0204,Mid-Market,APAC,Rachel Foster,28879.65,2026-06-30,Healthy,Pipeline,0.025,8
+ACC-0210,Account_0210,Mid-Market,APAC,David Kim,25000.0,2026-06-29,At Risk,At Risk,0.353,4
+ACC-0213,Account_0213,Enterprise,EMEA,Emily Rodriguez,156086.22,2026-06-29,Needs Attention,Pipeline,0.248,7
+ACC-0223,Account_0223,Enterprise,EMEA,Michael Brown,107457.09,2026-05-31,Needs Attention,Best Case,0.198,8
+ACC-0228,Account_0228,SMB,EMEA,Michael Brown,17615.54,2026-03-29,Healthy,Best Case,0.036,7
+ACC-0230,Account_0230,Enterprise,LATAM,Ana Garcia,100000.0,2026-05-12,Healthy,Commit,0.087,8
+ACC-0237,Account_0237,Mid-Market,LATAM,James Thompson,25000.0,2026-03-24,Needs Attention,Commit,0.171,8
+ACC-0238,Account_0238,Enterprise,North America,Rachel Foster,100000.0,2026-04-26,Needs Attention,Commit,0.121,5
+ACC-0243,Account_0243,Enterprise,North America,Michael Brown,100000.0,2026-08-24,At Risk,At Risk,0.346,6
+ACC-0248,Account_0248,Mid-Market,LATAM,Emily Rodriguez,25000.0,2026-04-03,Needs Attention,Best Case,0.243,8

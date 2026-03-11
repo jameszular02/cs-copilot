@@ -27,16 +27,16 @@ st.set_page_config(
 
 # --- Design System ---
 COLORS = {
-    "primary": "#0F2B46",       # Deep navy
+    "primary": "#0F2B46",
     "primary_light": "#1A3F5C",
-    "accent": "#00B4D8",        # Vibrant cyan
-    "accent_alt": "#7B61FF",    # Purple accent
-    "success": "#06D6A0",       # Mint green
-    "warning": "#FFB703",       # Amber
-    "danger": "#EF476F",        # Coral red
+    "accent": "#00B4D8",
+    "accent_alt": "#7B61FF",
+    "success": "#06D6A0",
+    "warning": "#FFB703",
+    "danger": "#EF476F",
     "danger_dark": "#C1334A",
-    "text": "#0F172A",
-    "text_muted": "#334155",
+    "text": "#000000",       # dark text
+    "text_muted": "#111827", # dark gray secondary text
     "bg_card": "#FFFFFF",
     "bg_page": "#F1F5F9",
     "bg_sidebar": "#0F2B46",
@@ -48,12 +48,44 @@ COLORS = {
 CHART_TEMPLATE = dict(
     paper_bgcolor="rgba(0,0,0,0)",
     plot_bgcolor="rgba(0,0,0,0)",
-    font=dict(family="Inter, -apple-system, BlinkMacSystemFont, sans-serif", color=COLORS["text"], size=12),
+    font=dict(
+        family="Inter, -apple-system, BlinkMacSystemFont, sans-serif",
+        color=COLORS["text"],   # global chart text color
+        size=12,
+    ),
     margin=dict(l=16, r=16, t=40, b=16),
-    legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1, font=dict(size=11)),
-    xaxis=dict(showgrid=False, zeroline=False),
-    yaxis=dict(gridcolor="#F1F5F9", gridwidth=1, zeroline=False),
-    hoverlabel=dict(bgcolor="white", font_size=12, font_family="Inter"),
+    legend=dict(
+        orientation="h",
+        yanchor="bottom",
+        y=1.02,
+        xanchor="right",
+        x=1,
+        font=dict(size=11, color=COLORS["text"]),  # legend labels dark
+    ),
+    xaxis=dict(
+        showgrid=False,
+        zeroline=False,
+        tickfont=dict(color=COLORS["text_muted"]), # x ticks dark
+        title_font=dict(color=COLORS["text"]),     # x title dark
+    ),
+    yaxis=dict(
+        gridcolor="#E5E7EB",
+        gridwidth=1,
+        zeroline=False,
+        tickfont=dict(color=COLORS["text_muted"]), # y ticks dark
+        title_font=dict(color=COLORS["text"]),     # y title dark
+    ),
+    # for secondary y-axes (like NRR %)
+    yaxis2=dict(
+        tickfont=dict(color=COLORS["text_muted"]),
+        title_font=dict(color=COLORS["text"]),
+    ),
+    hoverlabel=dict(
+        bgcolor="white",
+        font_size=12,
+        font_family="Inter",
+        font_color=COLORS["text"],
+    ),
 )
 
 # --- Custom CSS ---
@@ -537,7 +569,7 @@ if "Month" in metrics.columns:
 # PAGE: Executive Summary
 # =====================================================================
 if page == "Executive Summary":
-    render_page_header("Executive Summary", "Real-time overview of Customer Success Operations KPIs")
+    render_page_header("Executive1 Summary", "Real-time overview of Customer Success Operations KPIs")
 
     total_arr = accounts["ARR"].sum()
     total_accounts = len(accounts)
