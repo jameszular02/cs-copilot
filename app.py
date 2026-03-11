@@ -569,7 +569,7 @@ if "Month" in metrics.columns:
 # PAGE: Executive Summary
 # =====================================================================
 if page == "Executive Summary":
-    render_page_header("Executive1 Summary", "Real-time overview of Customer Success Operations KPIs")
+    render_page_header("Executive Summary", "Real-time overview of Customer Success Operations KPIs")
 
     total_arr = accounts["ARR"].sum()
     total_accounts = len(accounts)
