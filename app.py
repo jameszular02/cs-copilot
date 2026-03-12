@@ -1498,7 +1498,7 @@ elif page == "Automated Alerts":
 
         for _, alert in filtered_alerts[filtered_alerts["Priority"] == "CRITICAL"].head(5).iterrows():
             st.markdown(f"""<div style="padding:8px 12px; margin-bottom:4px; border-left:3px solid {COLORS['danger']};
-                        background:{COLORS['danger']}08; border-radius:0 6px 6px 0; font-size:0.9rem;">
+                        background:{COLORS['danger_dark']}; border-radius:0 6px 6px 0; font-size:0.9rem;">
                 <strong>{alert['Account']}</strong> - {alert['Alert']} &rarr; <em>{alert['Action']}</em>
             </div>""", unsafe_allow_html=True)
 
