@@ -456,13 +456,14 @@ def render_metric_card(label, value, variant="primary", delta=None, delta_dir="p
     delta_html = ""
     if delta:
         delta_html = f'<div class="metric-delta {delta_dir}">{delta}</div>'
-    return f"""
-    <div class="metric-card {variant}">
-        <div class="metric-label">{label}</div>
-        <div class="metric-value">{value}</div>
-        {delta_html}
-    </div>
-    """
+
+    return (
+        f'<div class="metric-card {variant}">'
+        f'<div class="metric-label">{label}</div>'
+        f'<div class="metric-value">{value}</div>'
+        f'{delta_html}'
+        f'</div>'
+    )
 
 def render_page_header(title, subtitle):
     st.markdown(f'<div class="page-title">{title}</div>', unsafe_allow_html=True)
