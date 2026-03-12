@@ -447,6 +447,27 @@ st.markdown(f"""
     ::-webkit-scrollbar-track {{ background: transparent; }}
     ::-webkit-scrollbar-thumb {{ background: #CBD5E1; border-radius: 3px; }}
     ::-webkit-scrollbar-thumb:hover {{ background: #94A3B8; }}
+
+    
+    /* Expander header */
+    div[data-testid="stExpander"] > details > summary {{
+        background-color: #bababa;
+        color: white;
+        border-radius: 8px;
+        padding: 8px 12px;
+    }}
+
+    /* Expander body */
+    div[data-testid="stExpander"] > details {{
+        background-color: #ebebeb;
+        border-radius: 8px;
+        border: 1px solid #374151;
+    }}
+
+    /* Hover */
+    div[data-testid="stExpander"] > details > summary:hover {{
+        background-color: #ebebeb;
+    }}
 </style>
 """, unsafe_allow_html=True)
 
