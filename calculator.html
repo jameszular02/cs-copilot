@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculadora</title>
+<style>
+  :root {
+    --pink-dark: #d6336c;
+    --pink-mid: #f06595;
+    --pink-light: #ffd6e8;
+    --pink-bg: #fff0f6;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(160deg, var(--pink-bg), var(--pink-light));
+    font-family: "Segoe UI", Arial, sans-serif;
+  }
+
+  .calculator {
+    background: #fff;
+    border-radius: 24px;
+    padding: 24px;
+    width: 320px;
+    box-shadow: 0 20px 40px rgba(214, 51, 108, 0.25);
+    border: 2px solid var(--pink-light);
+  }
+
+  .display {
+    background: var(--pink-bg);
+    border-radius: 16px;
+    padding: 20px 16px;
+    margin-bottom: 16px;
+    text-align: right;
+    overflow: hidden;
+  }
+
+  .display .previous {
+    min-height: 20px;
+    font-size: 14px;
+    color: #a64d79;
+    opacity: 0.8;
+  }
+
+  .display .current {
+    font-size: 36px;
+    font-weight: 600;
+    color: var(--pink-dark);
+    word-wrap: break-word;
+    word-break: break-all;
+  }
+
+  .buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+  }
+
+  button {
+    border: none;
+    border-radius: 14px;
+    font-size: 20px;
+    padding: 18px 0;
+    cursor: pointer;
+    background: var(--pink-light);
+    color: var(--pink-dark);
+    transition: transform 0.08s ease, background 0.15s ease;
+  }
+
+  button:hover { background: #ffc2dc; }
+  button:active { transform: scale(0.95); }
+
+  button.operator {
+    background: var(--pink-mid);
+    color: #fff;
+  }
+  button.operator:hover { background: #e64a80; }
+
+  button.equals {
+    background: var(--pink-dark);
+    color: #fff;
+    grid-column: span 2;
+  }
+  button.equals:hover { background: #b82858; }
+
+  button.clear, button.delete {
+    background: #fbb1c7;
+    color: #6e1233;
+  }
+  button.clear:hover, button.delete:hover { background: #f78fb0; }
+
+  button.span-2 { grid-column: span 2; }
+</style>
+</head>
+<body>
+
+<div class="calculator">
+  <div class="display">
+    <div class="previous" id="previous-operand"></div>
+    <div class="current" id="current-operand">0</div>
+  </div>
+
+  <div class="buttons">
+    <button class="clear" onclick="calculator.clear()">C</button>
+    <button class="delete" onclick="calculator.delete()">DEL</button>
+    <button class="operator" data-op="/" onclick="calculator.chooseOperation('/')">÷</button>
+    <button class="operator" data-op="*" onclick="calculator.chooseOperation('*')">×</button>
+
+    <button onclick="calculator.appendNumber('7')">7</button>
+    <button onclick="calculator.appendNumber('8')">8</button>
+    <button onclick="calculator.appendNumber('9')">9</button>
+    <button class="operator" data-op="-" onclick="calculator.chooseOperation('-')">−</button>
+
+    <button onclick="calculator.appendNumber('4')">4</button>
+    <button onclick="calculator.appendNumber('5')">5</button>
+    <button onclick="calculator.appendNumber('6')">6</button>
+    <button class="operator" data-op="+" onclick="calculator.chooseOperation('+')">+</button>
+
+    <button onclick="calculator.appendNumber('1')">1</button>
+    <button onclick="calculator.appendNumber('2')">2</button>
+    <button onclick="calculator.appendNumber('3')">3</button>
+    <button class="equals" style="grid-row: span 2;" onclick="calculator.compute()">=</button>
+
+    <button class="span-2" onclick="calculator.appendNumber('0')">0</button>
+    <button onclick="calculator.appendNumber('.')">.</button>
+  </div>
+</div>
+
+<script>
+class Calculator {
+  constructor(previousOperandElement, currentOperandElement) {
+    this.previousOperandElement = previousOperandElement;
+    this.currentOperandElement = currentOperandElement;
+    this.clear();
+  }
+
+  clear() {
+    this.currentOperand = '0';
+    this.previousOperand = '';
+    this.operation = undefined;
+    this.updateDisplay();
+  }
+
+  delete() {
+    this.currentOperand = this.currentOperand.slice(0, -1) || '0';
+    this.updateDisplay();
+  }
+
+  appendNumber(number) {
+    if (number === '.' && this.currentOperand.includes('.')) return;
+    if (this.currentOperand === '0' && number !== '.') {
+      this.currentOperand = number;
+    } else {
+      this.currentOperand += number;
+    }
+    this.updateDisplay();
+  }
+
+  chooseOperation(operation) {
+    if (this.currentOperand === '') return;
+    if (this.previousOperand !== '') {
+      this.compute();
+    }
+    this.operation = operation;
+    this.previousOperand = this.currentOperand;
+    this.currentOperand = '0';
+    this.updateDisplay();
+  }
+
+  compute() {
+    let result;
+    const prev = parseFloat(this.previousOperand);
+    const current = parseFloat(this.currentOperand);
+    if (isNaN(prev) || isNaN(current)) return;
+
+    switch (this.operation) {
+      case '+':
+        result = prev + current;
+        break;
+      case '-':
+        result = prev - current;
+        break;
+      case '*':
+        result = prev * current;
+        break;
+      case '/':
+        result = current === 0 ? 'Error' : prev / current;
+        break;
+      default:
+        return;
+    }
+
+    this.currentOperand = typeof result === 'number'
+      ? parseFloat(result.toFixed(10)).toString()
+      : result;
+    this.operation = undefined;
+    this.previousOperand = '';
+    this.updateDisplay();
+  }
+
+  getOperatorSymbol(operation) {
+    return { '+': '+', '-': '−', '*': '×', '/': '÷' }[operation] || '';
+  }
+
+  updateDisplay() {
+    this.currentOperandElement.textContent = this.currentOperand;
+    this.previousOperandElement.textContent = this.operation
+      ? `${this.previousOperand} ${this.getOperatorSymbol(this.operation)}`
+      : '';
+  }
+}
+
+const previousOperandElement = document.getElementById('previous-operand');
+const currentOperandElement = document.getElementById('current-operand');
+const calculator = new Calculator(previousOperandElement, currentOperandElement);
+
+document.addEventListener('keydown', (e) => {
+  if (e.key >= '0' && e.key <= '9') calculator.appendNumber(e.key);
+  if (e.key === '.') calculator.appendNumber('.');
+  if (['+', '-', '*', '/'].includes(e.key)) calculator.chooseOperation(e.key);
+  if (e.key === 'Enter' || e.key === '=') {
+    e.preventDefault();
+    calculator.compute();
+  }
+  if (e.key === 'Backspace') calculator.delete();
+  if (e.key === 'Escape') calculator.clear();
+});
+</script>
+
+</body>
+</html>
